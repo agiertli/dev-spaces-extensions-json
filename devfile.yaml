@@ -24,3 +24,11 @@ components:
   - name: m2
     volume:
       size: 1G
+commands:
+  - id: import-certificates
+    exec:
+      component: tools
+      commandLine: "sh /home/user/init-java8-truststore.sh"
+events:
+  postStart:
+    - import-certificates
